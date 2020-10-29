@@ -1,0 +1,101 @@
+
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-md-4 offset-md-4 mt-5">
+        <div class="card">
+            <div class="card-header" style="align-content: center;">
+                Registration Page
+            </div>
+            <div class="card-body">
+    <form [formGroup]="registerForm" (ngSubmit)="signup();">
+    <div class="formbox">
+     
+    <div class="form-group">
+    <input type="text" formControlName="firstName" class="form-control" placeholder="first Name" [ngClass]="{ 'is-invalid': submitted && fval.firstName.errors }"/>
+    <div *ngIf="submitted && fval.firstName.errors" class="invalid-feedback">
+    <div *ngIf="fval.firstName.errors.required">
+    Full Name is required and must be a valid name
+    </div>
+     
+    </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && fval.lastName.errors }"/>
+        <div *ngIf="submitted && fval.lastName.errors" class="invalid-feedback">
+        <div *ngIf="fval.lastName.errors.required">
+        Full Name is required and must be a valid name
+        </div>
+         
+        </div>
+    </div>
+
+    <div class="form-group">
+    <input type="email" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
+    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+    <div *ngIf="fval.email.errors.required">Email is required</div>
+    <div *ngIf="fval.email.errors.email">Enter a valid email address</div>
+    </div>
+    </div>
+     
+    <div class="form-group">
+    <input type="text" formControlName="phone" class="form-control" placeholder="Phone No." maxlength="12" minlength="10" [ngClass]="{ 'is-invalid': submitted && fval.phone.invalid }" required />
+    <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+    <div *ngIf="fval.phone.errors.required">Phone is required</div>
+    </div>
+    </div>
+
+    <div class="form-group">
+        <div class="custom-control custom-radio">
+            <input id="male" type="radio" class="custom-control-input" value="male" name="gender" formControlName="gender" >
+            <label class="custom-control-label" for="male">Male</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+        <input id="female" type="radio" class="custom-control-input" value="female" name="gender" formControlName="gender">
+        <label class="custom-control-label" for="female">Female</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <textarea formControlName="address" class="form-control" rows="4" placeholder="Address" [ngClass]="{ 'is-invalid': submitted && fval.address.errors}"></textarea>
+        <div *ngIf="submitted && fval.address.errors" class="invalid-feedback">
+        <div *ngIf="fval.address.errors.required">
+            Address is required
+        </div>
+         
+        </div>
+    </div>
+
+    <div class="form-group">
+    <input type="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && fval.password.errors}" />
+    <div *ngIf="submitted && fval.password.errors"class="invalid-feedback">
+    <div ngClass="fval.password.errors.required">
+    Password is required.
+    </div>
+    <div *ngIf="fval.password.errors.minlength">Password must be at least 8 characters</div>
+    </div>
+    </div>
+    <div class="form-group">
+    <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password"[ngClass]="{ 'is-invalid': submitted && fval.confirmPassword.errors }" PassValidatorsDirective='password'/>
+    <div *ngIf="submitted && fval.confirmPassword.errors" class="invalid-feedback">
+    <div *ngIf="fval.confirmPassword.errors.required"
+    >Confirm password is required</div>
+    <div *ngIf="fval.confirmPassword.errors?.notEqual">Password Mismatch</div>
+    </div>
+     
+    </div>
+
+   
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary signin">Sign Up <span class="arrowbtn"><span
+    class="fa fa-arrow-right"></span></span></button>
+    </div>
+    </div>
+    </form>
+</div>
+</div>
+    </div>
+    </div>
+    </div>
+

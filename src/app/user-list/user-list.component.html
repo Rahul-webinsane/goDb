@@ -1,0 +1,30 @@
+
+<div class="container-fluid">
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1 style="text-align: center;color: gray;">Sample json placeholder api dummy list</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="container table-responsive">           
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Website</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of userList">
+                    <td>{{data.name}}</td>
+                    <td>{{data.phone}}</td>
+                    <td>{{data.website}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+    
+</div>

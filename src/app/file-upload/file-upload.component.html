@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <div class="row mt-3"  style="align-content: center;">
+        <div class="col-lg-6" >
+            <div class="card">
+                <div class="card-header" style="text-align: center;">
+                   FILE UPLOAD 
+                </div>
+                <div class="card-body">
+                   <form>
+                       <input type="file" class="form-control" (change)="save($event)">
+                       <br><br>
+                       <span [innerHTML]="result"></span>
+                   </form>
+                </div>
+                <!-- <div class="card-footer">Footer</div> -->
+              </div>
+        </div>
+    </div>
+   
+</div>
+

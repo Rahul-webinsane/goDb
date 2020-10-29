@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <p style="color:black;">sample email id : <span style="color:red;">admin1@nmipl</span>   and password: <span style="color:red;">feb@123456</span> </p>
+        </div>
+    </div>
+    <div class="row mt-3"  style="align-content: center;">
+        <div class="col-lg-6" >
+            <div class="card">
+                <div class="card-header">
+                    User Login
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <label for="emailid">Email Id</label>
+                            <input type="text" formControlName="emailid" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginValue.emailid.errors }" />
+                            <div *ngIf="submitted && loginValue.emailid.errors" class="invalid-feedback">
+                                <div *ngIf="loginValue.emailid.errors.required">Email Id  is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && loginValue.password.errors }" />
+                            <div *ngIf="submitted && loginValue.password.errors" class="invalid-feedback">
+                                <div *ngIf="loginValue.password.errors.required">Password is required</div>
+                                <div *ngIf="loginValue.email.errors.email">Enter a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary">Login</button>
+                            <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="card-footer">Footer</div> -->
+              </div>
+        </div>
+    </div>
+   
+</div>

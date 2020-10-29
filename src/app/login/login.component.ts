@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   loginList: any = [];
+  submitted: any;
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
               private router: Router, private loginService: DatasServiceService) { }
 
